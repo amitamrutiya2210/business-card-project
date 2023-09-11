@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" language="text/css" />
+    <script
+      type="text/javascript"
+      src="chrome-extension://agechnindjilpccclelhlbjphbgnobpf/sdk.bundle.js"
+    ></script>
+    <title>Card</title>
+  </head>
+  <body cz-shortcut-listen="true">
+    <div id="main">
+      <div>
+        <div id="card-data">
+          <div id="card">
+            <div
+              id="front"
+              style="transform: perspective(1000px) rotateY(-180deg)"
+            >
+              <div>
+                <img id="logo" src="./Cards/logo.jpg" />
+                <div style="padding: 10px"></div>
+                <span id="front-mail-text" class="gradient-text-ie"
+                  >Ghanshyam Hosiery</span
+                >
+              </div>
+            </div>
+            <div id="back" style="transform: perspective(1000px) rotateY(0deg)">
+              <div id="background"></div>
+              <div>
+                <span id="title"> Ghanshyam Hosiery </span>
+                <div
+                  style="
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: center;
+                    align-items: center;
+                  "
+                >
+                  <span id="name">Rajeshbhai Kasundra</span>
+                  <span id="contact-no">Contact: +91 9898633783</span>
+                </div>
+                <span id="contact-methods">
+                  <a href="https://wa.me/919898633783">
+                    <div id="ac-item-wp">
+                      <div id="img"></div>
+                    </div> </a
+                  ><a href="tel:9898633783">
+                    <div id="ac-item-cl">
+                      <div id="img"></div>
+                    </div>
+                  </a>
+                  <a href="Contact.vcf" download="">
+                    <div id="ac-item-sv">
+                      <div id="img"></div>
+                    </div>
+                  </a>
+                </span>
+                <span id="mail-span"
+                  ><a href="mailto:ghanshyamhosiery.nvs@gmail.com"
+                    >ghanshyamhosiery.nvs@gmail.com</a
+                  ></span
+                >
+                <div id="address-link">
+                  <span> <img src="./images/location.svg" />&nbsp; </span>
+                  Shop no-1, Krishna Shoping Center, Udhyog Nagar,
+                  <br />Vijalpore road, Navsari-396421
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="toggle-data">
+          <div id="toggle">
+            <div id="handle" style="transform: translate(100%, 0%)"></div>
+          </div>
+          <span id="c-p">Back</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var front = document.getElementById("front");
+      var back = document.getElementById("back");
+      var isFront = true;
+      var toggle = document.getElementById("handle");
+      function flip() {
+        if (isFront) {
+          front.style.transform = "perspective(1000px) rotateY(-180deg)";
+          back.style.transform = "perspective(1000px) rotateY(0deg)";
+
+          toggle.style.transform = "translate(100%,0%)";
+          document.getElementById("c-p").innerHTML = "Back";
+        } else {
+          front.style.transform = "perspective(1000px) rotateY(0deg)";
+          back.style.transform = "perspective(1000px) rotateY(180deg)";
+          toggle.style.transform = "translate(0%,0%)";
+          document.getElementById("c-p").innerHTML = "Front";
+        }
+        isFront = !isFront;
+      }
+      setTimeout(function () {
+        if (isFront) flip();
+      }, 3000);
+      document.getElementById("toggle").onclick = function () {
+        flip();
+      };
+      window.onkeypress = function (e) {
+        console.log(e.keyCode);
+        if (e.keyCode == 70 || e.keyCode == 102) {
+          flip();
+        }
+      };
+
+      document.getElementById("address-link").onclick = function () {
+        // Place address link here.
+        window.location = "https://maps.app.goo.gl/XdRA6tysSmTHfQRH8";
+      };
+      document.getElementById("wp-link").onclick = function () {
+        // Place address link here.
+        window.location = "https://wa.me/919898633783";
+      };
+      document.getElementById("call").onclick = function () {
+        // Place address link here.
+        window.location = "tel:919898633783";
+      };
+      document.getElementById("mail-span").onclick = function () {
+        // Place address link here.
+        window.location = "mailto:ghanshyamhosiery.nvs@gmail.com";
+      };
+    </script>
+
+    <div></div>
+  </body>
+</html>

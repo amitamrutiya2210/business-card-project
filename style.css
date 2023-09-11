@@ -1,0 +1,318 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: arial;
+  padding: 0;
+  margin: 0;
+  text-decoration:none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a,
+a:visited,
+a:active,
+a:hover {
+  color: #ceab37;
+  text-decoration: none;
+}
+
+.pad {
+  height: 2%;
+  width: 100%;
+}
+
+.fore-icon {
+  height: 20px;
+}
+
+.fore-icon-2 {
+  height: 25px;
+}
+.link
+{
+	text-decoration:none;
+}
+
+.brands-icon {
+  height: 40px;
+}
+
+.demo-text {
+  font-size: 18px;
+  color: #ceab37;
+  letter-spacing: 1.4px;
+}
+
+/* .gradient-text-notie {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgb(225, 228, 149),
+    rgb(145, 90, 26),
+    rgb(225, 228, 149)
+  );
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-size: 70%;
+  color: transparent;
+} */
+
+.gradient-text-ie {
+  color: rgb(225, 228, 149);
+}
+
+/* Toggle Button Style */
+div#toggle-data {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+div#toggle {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: rgb(0, 140, 255);
+  box-shadow: inset 0px 0px 5px black;
+  border-radius: 10px;
+  position: relative;
+}
+
+div#toggle > div {
+  height: 100%;
+  width: 50%;
+  transform: translate(0%, 0%);
+  border-radius: 50%;
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+div#toggle-data > span {
+  margin-left: 20px;
+}
+
+div#main {
+  position: relative;
+  top: 50%;
+  transform: translate(0%, -50%);
+  transform-origin: top left;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+div#main > div {
+  display: inline;
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
+
+div#card-data {
+  position: relative;
+  width: 600px;
+  height: 378.31px;
+}
+
+/* Card Stylesheet */
+div#card {
+  position: absolute;
+  /* top: 50%; */
+  /* left: 50%; */
+  height: 100%;
+  width: 100%;
+  /* transform: translate(-50%, -50%); */
+  transform-origin: top left;
+}
+
+div#card > div {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease;
+  border-radius: 30px;
+  box-shadow: 0px 0px 50px -15px black;
+  background-color: black;
+  color: rgb(225, 228, 149);
+}
+
+div#card > div > * {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+div#card > div#front {
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+div#card > div#back {
+  transform: perspective(1000px) rotateY(180deg);
+}
+
+/* Front Page Stylesheet */
+div#front {
+  /* background-color: white; */
+  /* background-image: url("./Card/front-back.jpg"); */
+  background-size: 100% 100%;
+}
+
+div#front > div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#front > div > img#logo {
+  height: 60%;
+  /* align-self: center; */
+  /* transform: translate(75%, 35%); */
+}
+
+#front > div > #front-mail-text {
+  font-size: 40px;
+}
+
+/* Back Page Stylesheet */
+#back {
+  /* background-color: #2b2a28; */
+  font-style: medium;
+  letter-spacing: 1.2px;
+}
+
+#back > div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  /* padding-top: 30px; */
+  /* padding-top: 30px; */
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#back > div:nth-child(2) {
+  justify-content: space-evenly;
+}
+
+/* #back > #address-span {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+} */
+
+#back > div > #title {
+  font-size: 40px;
+}
+
+#back > div > #address-span {
+  text-align: center;
+  cursor: pointer;
+}
+
+#back > div > #contact-methods {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#back > div > #contact-methods > a > div {
+  height: 40px;
+  width: 40px;
+  border: 2px solid rgb(225, 228, 149);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#back > div > #contact-methods > a > div#ac-item-wp > #img {
+  background-image: url("./images/whatsapp.png");
+  background-size: cover;
+}
+
+#back > div > #contact-methods > a > div#ac-item-cl > #img {
+  background-image: url("./images/call.png");
+  background-size: cover;
+ 
+}
+#back > div > #contact-methods > a >div#ac-item-fb > #img {
+  background-image: url("./images/facebook.png");
+  background-size: cover;
+}
+#back > div > #contact-methods > a > div#ac-item-sv > #img {
+  background-image: url("./images/save-icon.png");
+  background-size: cover;
+}
+
+#back > div > #contact-methods > a >div > #img {
+  height: 60%;
+  width: 60%;
+}
+
+#back > div#background {
+  background-image: url("./images/logo.jpg");
+  background-position: center;
+  background-size: 70% 100%;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+}
+
+/* responsive Designs */
+
+@keyframes rotateBrands {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-190%);
+  }
+}
+
+@media screen and (max-width: 700px) and (min-width: 500px) {
+  div#main > div {
+    transform: scale(0.8, 0.8);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  div#main {
+    width: 100%;
+    position: relative;
+    top: 0%;
+    transform: translate(0%, 0%);
+    padding-top: 30px;
+  }
+
+  div#main > div {
+    transform: scale(0.7, 0.7);
+  }
+}
+
+@media screen and (max-width: 440px) {
+  div#main > div {
+    transform: scale(0.6, 0.6);
+  }
+}
+
+@media screen and (max-width: 380px) {
+  div#main > div {
+    transform: scale(0.5, 0.5);
+  }
+}
